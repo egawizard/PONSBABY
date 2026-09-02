@@ -170,6 +170,8 @@
   .cloud.two{right:-20px;top:62%;animation-delay:-4s}
   @keyframes float{50%{transform:translateY(-18px) rotate(2deg)}}
   @media(max-width:850px){
+    .social-upgrade-grid{grid-template-columns:1fr}
+    .feature-list{grid-template-columns:1fr}
     .navlinks{display:none}
     .hero{padding-top:52px}
     .stats{grid-template-columns:repeat(2,1fr);margin-bottom:58px}
@@ -178,6 +180,8 @@
     .story{padding:34px}
   }
   @media(max-width:560px){
+    .reveal-warning{align-items:flex-start; padding:18px}
+    .reveal-warning-icon{width:54px;height:54px;border-radius:16px;font-size:26px}
     .container,.nav{width:min(100% - 22px,1160px)}
     .hero-card{border-radius:24px}
     .hero-card img{aspect-ratio:2/1;object-position:center}
@@ -187,6 +191,99 @@
     .section-head p{margin-top:14px}
     .footer-line{display:block}
   }
+
+  .social-upgrade-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .social-card,.upgrade-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:32px;
+    padding:30px;
+    box-shadow:0 14px 40px rgba(80,50,30,.06);
+    position:relative;
+    overflow:hidden;
+  }
+  .social-card{
+    background:linear-gradient(135deg,#fff 0%,#f4f0ff 100%);
+  }
+  .upgrade-card{
+    background:linear-gradient(135deg,#fff 0%,#fff0e4 100%);
+  }
+  .social-icon{
+    width:56px;height:56px;border-radius:18px;
+    display:grid;place-items:center;
+    background:#111;color:#fff;
+    font-size:28px;font-weight:900;
+    margin-bottom:18px;
+  }
+  .feature-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:20px;
+  }
+  .feature-chip{
+    padding:12px 14px;
+    background:rgba(255,255,255,.8);
+    border:1px solid var(--line);
+    border-radius:16px;
+    font-weight:800;
+    font-size:13px;
+  }
+  .notice-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    background:#211b17;
+    color:#fff;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:16px;
+  }
+
+
+  .reveal-warning-wrap{
+    padding:22px 0 0;
+  }
+  .reveal-warning{
+    background:linear-gradient(135deg,#ffb07a 0%, #ffd7a8 45%, #fff1d9 100%);
+    border:2px solid rgba(36,27,22,.12);
+    border-radius:30px;
+    box-shadow:0 18px 50px rgba(120,70,20,.16);
+    padding:24px 24px;
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  .reveal-warning-icon{
+    width:72px;height:72px;flex:none;
+    border-radius:22px;
+    background:#211b17;
+    color:#fff;
+    display:grid;place-items:center;
+    font-size:34px;font-weight:900;
+    box-shadow:0 10px 24px rgba(0,0,0,.16);
+  }
+  .reveal-warning-text b{
+    display:block;
+    font-size:clamp(24px,3.6vw,42px);
+    line-height:1;
+    letter-spacing:-.05em;
+    margin-bottom:8px;
+  }
+  .reveal-warning-text p{
+    margin:0;
+    color:#5d4e45;
+    font-size:clamp(14px,1.5vw,18px);
+    line-height:1.55;
+    font-weight:800;
+  }
+
 </style>
 </head>
 <body>
@@ -201,12 +298,27 @@
     <a href="#collection">Collection</a>
     <a href="#story">Story</a>
     <a href="#mint">Mint</a>
+    <a href="#social">X / Social</a>
+    <a href="#upgrade">Post-Mint</a>
     <a href="#faq">FAQ</a>
   </div>
   <a class="nav-cta" href="#mint">Mint Baby</a>
 </nav>
 
 <main>
+
+  <div class="reveal-warning-wrap">
+    <div class="container">
+      <div class="reveal-warning">
+        <div class="reveal-warning-icon">⚠</div>
+        <div class="reveal-warning-text">
+          <b>Reveal is currently in progress.</b>
+          <p>Please wait a few minutes while the final PONS BABY artwork is being updated and distributed across the collection.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section class="hero">
     <div class="container">
       <div class="hero-copy">
@@ -312,6 +424,7 @@
           <div class="price-line"><span>Network</span><b>TBA</b></div>
           <div class="price-line"><span>Mint Price</span><b>TBA</b></div>
           <div class="price-line"><span>Reveal</span><b>Instant Reveal at 100% Minted</b></div>
+          <div style="margin-top:16px;padding:14px 16px;border-radius:18px;background:#fff4e7;border:1px solid rgba(36,27,22,.08);font-size:13px;line-height:1.55;color:#6b5b52;font-weight:800">⚠ Reveal is currently in progress. Please wait a few minutes for updated metadata and final artwork to appear.</div>
           <a class="mint-button" href="https://opensea.io/collection/pons-baby-real-/overview" target="_blank" rel="noopener noreferrer" style="display:flex;text-decoration:none;justify-content:center">Mint on OpenSea ↗</a>
           <p style="margin:14px 4px 0;text-align:center;color:var(--muted);font-size:13px;line-height:1.5;font-weight:700">
             Instant reveal will begin once 100% of the collection has been minted.
@@ -330,6 +443,45 @@
     </div>
   </section>
 
+
+  <section id="social">
+    <div class="container">
+      <div class="section-head">
+        <h2>Stay close<br>on X.</h2>
+        <p>Follow the official PONS BABY social channel for mint progress, reveal timing, announcements, collector updates, and everything that happens after sellout.</p>
+      </div>
+
+      <div class="social-upgrade-grid">
+        <div class="social-card">
+          <div class="social-icon">𝕏</div>
+          <span class="notice-pill">Official Social Channel</span>
+          <h3 style="font-size:34px;letter-spacing:-.05em;margin:0 0 12px">PONS BABY on X</h3>
+          <p style="color:var(--muted);line-height:1.7;margin:0">
+            Mint progress, reveal announcements, collection updates, holder news, community posts, and future PONS BABY developments will be shared through the official X account.
+          </p>
+          <a class="btn-primary" href="#social" style="margin-top:20px">Follow on X ↗</a>
+        </div>
+
+        <div class="upgrade-card" id="upgrade">
+          <span class="notice-pill">After 100% Minted</span>
+          <h3 style="font-size:34px;letter-spacing:-.05em;margin:0 0 12px">The website levels up after mint.</h3>
+          <p style="color:var(--muted);line-height:1.7;margin:0">
+            Once the full 10,000 PONS BABY collection is minted and the instant reveal is completed, this website will be upgraded into a richer collector hub.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-chip">🖼 Full Collection Gallery</div>
+            <div class="feature-chip">💎 Rarity Explorer</div>
+            <div class="feature-chip">📊 Collection Stats</div>
+            <div class="feature-chip">👶 Character Browser</div>
+            <div class="feature-chip">🎁 Holder Features</div>
+            <div class="feature-chip">🗺 Roadmap V2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="container">
       <div class="section-head"><h2>Baby FAQ.</h2><p>Short answers. Tiny drama.</p></div>
@@ -338,6 +490,8 @@
         <details><summary>How many are there?<span>＋</span></summary><p>The collection supply is 10,000 NFTs, numbered from #00001 to #10000.</p></details>
         <details><summary>Where can I mint?<span>＋</span></summary><p>The official PONS BABY collection is available on OpenSea. Use the official buttons on this website to visit the collection.</p></details>
         <details><summary>When will my PONS BABY be revealed?<span>＋</span></summary><p>Instant reveal will begin once 100% of the collection has been minted. Until the mint is fully completed, NFTs will remain unrevealed.</p></details>
+        <details><summary>What happens after the mint is completed?<span>＋</span></summary><p>After 100% of the collection is minted and the reveal is complete, the PONS BABY website will be upgraded with a full gallery, rarity explorer, collection statistics, character browsing, holder-focused features, and Roadmap V2 updates.</p></details>
+
       </div>
     </div>
   </section>
